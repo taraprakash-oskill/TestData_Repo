@@ -1,6 +1,10 @@
 ALTER TABLE users ADD COLUMN phone_number VARCHAR(20);
 ALTER TABLE users ADD COLUMN status VARCHAR(20) DEFAULT 'active';
 
+CREATE OR REPLACE VIEW active_users AS
+SELECT id, username, email, created_at
+FROM users
+WHERE status = 'active';
 
 
 ALTER TABLE orders ADD COLUMN shipping_address TEXT;
