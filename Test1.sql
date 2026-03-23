@@ -6,5 +6,4 @@ CREATE TABLE orders (
     status VARCHAR(50) DEFAULT 'pending',
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
 CREATE INDEX idx_orders_user_status ON orders(user_id, status);
